@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@+id/videoListFragment"
+    >
+
+
+    <fragment
+        android:id="@+id/videoListFragment"
+        android:name="com.example.optisoltask.view.ui.fragment.VideoListFragment"
+        android:label="VideoListFragment"
+        tools:layout="@layout/fragment_video_list"/>
+    <fragment
+        android:id="@+id/roomListFragment"
+        android:name="com.example.optisoltask.view.ui.fragment.RoomListFragment"
+        android:label="RoomListFragment"
+        tools:layout="@layout/fragment_rooms_list"
+        >
+        <action
+            android:id="@+id/action_roomListFragment_to_roomCreateBottomSheetDialog"
+            app:destination="@id/roomCreateBottomSheetDialog" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/roomCreateBottomSheetDialog"
+        android:name="com.example.optisoltask.view.ui.bottomsheet.RoomCreateBottomSheetDialog"
+        android:label="RoomCreateBottomSheetDialog"
+        tools:layout="@layout/dialog_room_create_bottom_sheet">
+
+
+        <argument
+            android:name="model"
+            app:argType="com.example.optisoltask.view.model.RoomsModel"
+            app:nullable="true"
+            />
+        <argument
+            android:name="type"
+            app:argType="string"
+            />
+    </dialog>
+
+
+</navigation>

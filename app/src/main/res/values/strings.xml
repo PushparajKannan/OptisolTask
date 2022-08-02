@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">OptisolTask</string>
+    <string name="enter_room_name">Enter room name</string>
+    <string name="isLive">isLive</string>
+    <string name="create">Create</string>
+    <string name="cancel">Cancel</string>
+    <string name="videos">Videos</string>
+    <string name="feeds">Feeds</string>
+    <string name="vpm">VPM</string>
+    <string name="splash">Splash Screen</string>
+</resources>

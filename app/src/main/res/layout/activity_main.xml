@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.optisoltask.viewmodel.MainActivityViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainLay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.ui.activity.MainActivity"
+        android:background="?colorPrimaryVariant">
+
+
+        <!--<com.google.android.material.chip.ChipGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            app:singleSelection="true"
+            >
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/video"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/videos"
+                android:backgroundTint="?colorPrimaryVariant"
+                />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/feeds"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/feeds"
+                android:backgroundTint="?colorPrimaryVariant"
+                />
+
+
+        </com.google.android.material.chip.ChipGroup>-->
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/vpm"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="@dimen/_16dp"
+            android:textAppearance="@style/AppBar.Title"
+            />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tabLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle">
+
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnVideos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:cornerRadius="@dimen/_16dp"
+                android:layout_margin="@dimen/_16dp"
+                android:text="@string/videos"
+                android:textAllCaps="false"
+                android:padding="@dimen/_8dp"
+                android:textColor="@{viewModel.isVideoList ? @color/primaryColor : @color/primaryLightColor}"
+                android:backgroundTint="@{viewModel.isVideoList ? @color/secondaryColor : @color/primaryColor}"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnFeeds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btnVideos"
+                app:cornerRadius="@dimen/_16dp"
+                android:text="@string/feeds"
+                android:textAllCaps="false"
+                android:padding="@dimen/_8dp"
+                android:layout_marginStart="@dimen/_8dp"
+                android:textColor="@{!viewModel.isVideoList ? @color/primaryColor : @color/primaryLightColor}"
+                android:backgroundTint="@{!viewModel.isVideoList ? @color/secondaryColor : @color/primaryColor}"
+                />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+       <!-- <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            app:tabGravity="start"
+            android:backgroundTint="?colorPrimaryVariant"
+            app:tabIndicatorColor="@android:color/transparent"
+            app:tabMode="scrollable"
+            app:tabBackground="@drawable/tab_color_selector"
+            app:tabIndicatorHeight="0dp"
+
+            app:tabRippleColor="@null"
+            app:tabSelectedTextColor="@color/primaryColor">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/videos"
+                android:paddingStart="@dimen/_8dp"
+
+                android:layout_margin="@dimen/_16dp"
+                />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/feeds"
+                android:layout_margin="@dimen/_16dp"
+                />
+
+        </com.google.android.material.tabs.TabLayout>-->
+
+
+
+
+        <androidx.fragment.app.FragmentContainerView
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:id="@+id/nav_host_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/nav_graph"
+            app:layout_constraintTop_toBottomOf="@id/tabLay"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="EditText.OutLined.Background" parent="Widget.AppCompat.EditText">
+        <item name="android:padding">@dimen/_10dp</item>
+        <item name="android:background">@drawable/edit_outlined</item>
+    </style>
+    <style name="Label.TextView" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textAppearance">@style/TextAppearance.Material3.LabelMedium</item>
+        <item name="android:background">@drawable/label_outlined</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Chip.Theme" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="selectableItemBackground">@drawable/tab_background_selected</item>
+    </style>
+
+    <style name="Widget.App.Button.OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.App.SmallComponent</item>
+    </style>
+
+    <style name="ShapeAppearance.App.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+
+    <style name="AppBar.Title" parent="TextAppearance.Material3.ActionBar.Title">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+
+</resources>
